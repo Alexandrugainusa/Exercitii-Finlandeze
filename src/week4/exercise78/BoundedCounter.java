@@ -18,11 +18,19 @@ public class BoundedCounter {
 
     public String toString() {
         if (this.value<10){
-            return  ""+ this.value;
+            return  ""+ "0" + this.value;
         }
         else {
             return  ""+ this.value;
         }
+    }
 
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        if(value >=0 && value <= upperLimit)
+        this.value = value;
     }
 }
