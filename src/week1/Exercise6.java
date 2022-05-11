@@ -58,6 +58,7 @@ public class Exercise6 {
 //            amount-=loan;
 //        }
 //        System.out.println(amount);
+        //
     }
 
 
