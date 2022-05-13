@@ -74,30 +74,30 @@ public class HangmanFigure extends JPanel {
         }
 
         // näytä sana
-        g.drawString("Sana: " + this.logic.hiddenWord(), 20, 250);
+        g.drawString("Word: " + this.logic.hiddenWord(), 20, 250);
 
         // näytä virheiden lkm
-        g.drawString("Virheitä: " + virheita, 20, 270);
+        g.drawString("Errors: " + virheita, 20, 270);
 
 
         // näytä viesti
-        g.drawString("Viesti: " + annaTilanne(), 20, 290);
+        g.drawString("Message: " + annaTilanne(), 20, 290);
 
         // näytä arvatut kirjaimet
-        drawString(g, "Arvatut: " + this.logic.guessedLetters(), 20, 310, 240);
+        drawString(g, "Guess letters: " + this.logic.guessedLetters(), 20, 310, 240);
     }
 
     public String annaTilanne() {
         String salattuSana = this.logic.hiddenWord();
         if (!salattuSana.contains("_")) {
-            return "Voitit!";
+            return " YOU WON! ";
         }
 
         if (logic.numberOfFaults() > this.logic.losingFaultAmount()) {
-            return "Hävisit!";
+            return " YOU LOST! ";
         }
 
-        return "Syötä kirjain!";
+        return " Enter the letter! ";
     }
 
     // piirretään tekstiä joka vaihtaa riviä tarvittaessa

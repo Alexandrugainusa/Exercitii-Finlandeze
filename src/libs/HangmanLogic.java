@@ -41,17 +41,31 @@ public class HangmanLogic {
         // the letter is added among the already guessed letters
     }
 
+//    public String hiddenWord() {
+//        if(this.guessedLetters.length() == 0){
+//            String hiddenWord ="";
+//
+//            for(int i=0; i<this.word.length(); i++){
+//                hiddenWord +="_";
+//            }
+//            return hiddenWord;
+//        } else {
+//
+//            return "_OO_";
+//        }
+//    }
+
     public String hiddenWord() {
-        if(this.guessedLetters.length() == 0){
-            String buffer ="";
-
-            for(int i=0; i<this.word.length(); i++){
-                buffer +="_";
+        String hiddenWord = "";
+        for (int i = 0; i < word.length(); i++){
+            String letter = "" + word.charAt(i);
+            if (guessedLetters.contains(letter)){
+                hiddenWord += letter;
+            }else {
+                hiddenWord += "_";
             }
-            return buffer;
-        } else {
-
-            return "_OO_";
         }
+
+        return hiddenWord;
     }
 }
